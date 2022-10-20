@@ -1,4 +1,4 @@
 export const Home = () => {
     
-    return <></>
+    return <aside></aside>
 }

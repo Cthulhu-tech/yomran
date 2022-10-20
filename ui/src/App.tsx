@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Layout } from './layout/layout'
-import './style/globalStyle'
+import { Layout } from './components/layout/layout'
+import { Home } from './view/home'
+import './style/globalStyle.scss'
 import g from 'guark'
 
 
@@ -8,8 +9,8 @@ export const App = () => {
 
   return <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />}>
-
+      <Route element={<Layout />}>
+        <Route path='/' element={<Home/>}/>
       </Route>
     </Routes>
   </BrowserRouter>
