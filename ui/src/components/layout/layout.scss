@@ -5,7 +5,7 @@
     width: 100%;
     height: 60px;
     display: flex;
-    padding-left: 10%;
+    padding-left: 15px;
     align-items: center;
     align-content: center;
     justify-content: flex-start;
@@ -33,4 +33,47 @@
 
 .open {
     box-shadow: 0 -5px $black, 0 5px $black;
+}
+
+header {
+    grid-area: 1 / 2 / 1 / 6;
+}
+
+main {
+    grid-area: 2 / 2 / 4 / 3;
+}
+
+footer {
+    grid-area: 5 / 2 / 4 / 3;
+}
+
+aside {
+    overflow-y: auto;
+    grid-area: 1 / 1 / 5 / 2;
+    background-color: $gray;
+}
+
+.grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr 0.5fr;
+}
+
+.aside_open {
+    animation: menu-animation_open $animationFast ease-in-out forwards;
+}
+
+.aside_close {
+    animation: menu-animation_close $animationFast ease-in-out forwards;
+}
+
+@keyframes menu-animation_open {
+    from { width: 80px;}
+    to { width: 280px;}
+}
+
+@keyframes menu-animation_close {
+    from { width: 280px;}
+    to { width: 80px;}
 }

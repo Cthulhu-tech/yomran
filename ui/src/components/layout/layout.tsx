@@ -7,10 +7,10 @@ import './layout.scss'
 
 export const Layout = () => {
 
-    return <>
+    return <div className='grid'>
         <Header />
         <Aside />
         <Main/>
         <Footer />
-    </>
+    </div>
 }
