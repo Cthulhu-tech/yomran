@@ -10,7 +10,7 @@ export const Aside = () => {
     
     const changeVisability = () => dispatch(changeVisibleAside(visible))
 
-    return <aside className={visible ? 'aside_open shadow_right-inset' : 'aside_close shadow_right-inset'}>
+    return <aside className={visible ? 'aside_open' : 'aside_close'}>
         <div className="burger-container">
             <div className="burger-container__wrapper-button animation-background_medium" onClick={changeVisability}>
                 <div className={visible ? "burger-container__button open" : "burger-container__button close"}/>
