@@ -1,7 +1,7 @@
 import { Action } from "../interface"
 
 const defaultState = {
-    open: true
+    open: false
 }
 
 const updateVisible = "update_state_visible"
