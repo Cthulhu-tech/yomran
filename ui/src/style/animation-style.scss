@@ -4,18 +4,18 @@
 
 .animation-background_fast {
 
-    @include background-hover($shadow, $animationFast);
+    @include background-hover($blackOpacity, $animationFast);
 
 }
 
 .animation-background_medium {
 
-    @include background-hover($shadow, $animationMedium);
+    @include background-hover($blackOpacity, $animationMedium);
 
 }
 
 .animation-background_slow {
 
-    @include background-hover($shadow, $animationSlow);
+    @include background-hover($blackOpacity, $animationSlow);
 
 }
