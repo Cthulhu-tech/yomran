@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+.shadow_right {
+    border-right: 1px solid $gray;
+    box-shadow: 3px 3px 3px -3px $shadow;
+}
+
+.shadow_right-inset {
+    border-right: 1px solid $gray;
+    box-shadow: -3px -3px 3px -3px $shadow inset;
+}

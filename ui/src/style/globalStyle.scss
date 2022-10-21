@@ -4,29 +4,3 @@
     box-sizing: border-box;
     font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 }
-
-#root {
-
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: 0.3fr 1fr 1fr 0.5fr;
-
-}
-
-header {
-    grid-area: 1 / 2 / 1 / 6;
-}
-
-aside {
-    overflow-y: auto;
-    grid-area: 1 / 1 / 5 / 2;
-}
-
-main {
-    grid-area: 2 / 2 / 4 / 3;
-}
-
-footer {
-    grid-area: 5 / 2 / 4 / 3;
-}
