@@ -72,7 +72,7 @@ aside {
 
 .grid {
     display: grid;
-    min-height: 100vh;
+    height: 100vh;
     grid-template-columns: auto 1fr;
     grid-template-rows: 60px 1fr 1fr 60px;
 }
@@ -87,10 +87,10 @@ aside {
 
 @keyframes menu-animation_open {
     from { width: 80px;}
-    to { width: 280px;}
+    to { width: 278px;}
 }
 
 @keyframes menu-animation_close {
-    from { width: 280px;}
+    from { width: 278px;}
     to { width: 80px;}
 }

@@ -1,0 +1,128 @@
+@import '../../style/animation.scss';
+@import '../../style/colors.scss';
+
+.rooms-container {
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    justify-content: flex-start;
+}
+
+.room-wrapper {
+    display: flex;
+    cursor: pointer;
+    transition: $animationFast;
+    border-top: 1px solid $shadow;
+    &:hover {
+        background-color: $gray;
+    }
+}
+
+.room__message {
+    width: auto;
+    font-size: 12px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.room__message_name_open {
+    width: 120px;
+}
+
+.room__message_name_close {
+    width: 60px;
+}
+
+.room__message_name {
+    margin: 8px;
+    padding: 2px;
+    font-size: small;
+    background-color: $blueOpacity;
+}
+
+.room__message_last-message {
+    width: 90%;
+    padding: 4px;
+    font-size: small;
+    margin: 8px 0 8px 24px;
+    background-color: $blueOpacity;
+}
+
+.room__message_last-message_data{
+    padding: 4px;
+    color: $black;
+    background-color: $blueOpacity;
+}
+
+.room-image {
+    border-radius: 100%;
+}
+
+.room-wrapper_data_close {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-wrapper_data_open {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.room_close {
+    min-height: 100px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.room_open {
+    flex-direction: column;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    min-height: 60px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-create {
+    width: 76px;
+    margin: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-height: 40px;
+    border-radius: 8px;
+    background-color: $white;
+    border: 1px solid $blackOpacity;
+    &:hover {
+        background-color: $blackOpacity;
+    }
+}
+
+.image {
+    padding: 6px;
+    background-color: $gray;
+    transition: $animationFast;
+}
+
+.image-wrapper{
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $shadow;
+}

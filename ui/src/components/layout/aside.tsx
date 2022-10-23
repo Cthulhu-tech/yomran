@@ -2,6 +2,7 @@ import { changeVisibleAside } from "../../redux/store/aside"
 import { useDispatch, useSelector } from "react-redux"
 import { StoreData } from "../../redux/interface"
 import '../../style/shadow.scss'
+import { Rooms } from "./rooms"
 
 export const Aside = () => {
 
@@ -16,5 +17,6 @@ export const Aside = () => {
                 <div className={visible ? "burger-container__button open" : "burger-container__button close"}/>
             </div>
         </div>
+        <Rooms/>
     </aside>
 }
