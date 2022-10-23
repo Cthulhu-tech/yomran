@@ -1,9 +1,11 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux"
 import { visibleAside } from './store/aside'
-import thunk from "redux-thunk";
+import { roomsStore } from "./store/rooms"
+import thunk from "redux-thunk"
 
 export const rootReducer = combineReducers({
-    visibleAside
+    visibleAside,
+    roomsStore
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
