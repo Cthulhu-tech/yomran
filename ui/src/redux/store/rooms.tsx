@@ -1,4 +1,4 @@
-import { Action, Rooms } from "../interface"
+import { Action, RoomsType } from "../interface"
 
 const defaultState = [
         {   id: 1,
@@ -23,19 +23,19 @@ const addRoomsState = "add_state_rooms"
 const updateRoomsState = "update_state_rooms"
 const deleteRoomsState = "delete_state_rooms"
 
-export const roomsStore = (state = defaultState, action:Action<string, Rooms[] | Rooms>) => {
+export const roomsStore = (state = defaultState, action:Action<string, RoomsType[] | RoomsType>) => {
     switch (action.type){
         case updateRoomsState: 
-            return {...state, ...action.payload as Rooms[]}
-        case deleteRoomsState: 
-            return {...state.filter((element) => element.id !== (action.payload as Rooms).id)}
+            return [...state, ...action.payload as RoomsType[]]
+        case deleteRoomsState:
+            return [...state.filter((element) => element.id !== (action.payload as RoomsType).id)]
         case addRoomsState: 
-            return state.push(action.payload as Rooms)
+            return state.push(action.payload as RoomsType)
         default:
             return state
     }
 }
 
-export const addRooms = (payload: Rooms) => ({ type: updateRoomsState, payload });
-export const deleteRooms = (payload: Rooms) => ({ type: deleteRoomsState, payload });
-export const updateRooms = (payload: Rooms[]) => ({ type: updateRoomsState, payload });
+export const addRooms = (payload: RoomsType) => ({ type: updateRoomsState, payload });
+export const deleteRooms = (payload: RoomsType) => ({ type: deleteRoomsState, payload });
+export const updateRooms = (payload: RoomsType[]) => ({ type: updateRoomsState, payload });
