@@ -4,13 +4,22 @@ export interface Action<T, P> {
 }
 
 export type StoreData = {
-    visibleAside: {
-        open: boolean
-    }
-    roomsStore: Rooms[]
+    visibleAside: booleanType
+    roomsStore: RoomsType[]
+    visiblePopup: PopupType
 }
 
-export type Rooms = {
+export type PopupType = {
+    open: boolean
+    callback: () => void
+    message: string
+}
+
+export type booleanType = {
+    open: boolean
+}
+
+export type RoomsType = {
     id: number
     name: string
     creator: string
