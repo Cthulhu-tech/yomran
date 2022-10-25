@@ -14,33 +14,33 @@ export const Rooms = () => {
     const open = useSelector((store: StoreData) => store.visibleAside.open)
     const openPopup = useSelector((store: StoreData) => store.visiblePopup.open)
 
-    const deleteRoom = (room: RoomsType) => { 
+    const deleteRoom = (room: RoomsType) => {
         dispatch(changeVisiblePopup({
-            open: openPopup, 
-            callback: () => dispatch(deleteRooms(room)), 
-            message: `Удалить все данные из комнаты ${room.id}?`
+            open: openPopup,
+            callback: () => dispatch(deleteRooms(room)),
+            message: `Удалить все данные из комнаты ${room.name} - ${room.id}?`
         }))
     }
 
     return <>
-    <Button/>
-    <section className="rooms-container">
-        {rooms.map((room) => {
-            return <section className={open ? "room-wrapper room_open" : "room-wrapper room_close"} key={room.id}>
-                <div className={ open ? 'room-wrapper_data_open' : 'room-wrapper_data_close'}>
-                    <Image {...{width: '28px', src: room.img, alt: room.name, className: "room-image"}} />
-                    <p className={open ? 'room__message_name room__message room__message_name_open' : 'room__message_name room__message room__message_name_close'}>{room.name}</p>
-                    {open && <p className='room__message room__message_last-message_data'>{dataFormater(new Date(+room.lastMessageDate))}</p>}
-                    {open && <div className='close-button animation-background_medium' onClick={() => deleteRoom(room)}>
-                        <div className='burger-container__button open'/>
+        <Button />
+        <section className="rooms-container">
+            {rooms.map((room) => {
+                return <section className={open ? "room-wrapper room_open" : "room-wrapper room_close"} key={room.id}>
+                    <div className={open ? 'room-wrapper_data_open' : 'room-wrapper_data_close'}>
+                        <Image {...{ width: '28px', src: room.img, alt: room.name, className: "room-image" }} />
+                        <p className={open ? 'room__message_name room__message room__message_name_open' : 'room__message_name room__message room__message_name_close'}>{room.name}</p>
+                        {open && <p className='room__message room__message_last-message_data'>{dataFormater(new Date(+room.lastMessageDate))}</p>}
+                        {open && <div className='close-button animation-background_medium' onClick={() => deleteRoom(room)}>
+                            <div className='burger-container__button open' />
+                        </div>}
+                    </div>
+                    {open && <div className={open ? 'room-wrapper_data_open' : 'room-wrapper_data_close'}>
+                        <Image {...{ width: '28px', src: room.lastMessageUserImg, alt: room.name, className: "room-image" }} />
+                        <p className='room__message room__message_last-message'>{room.lastMessage}</p>
                     </div>}
-                </div>
-                {open && <div className={ open ? 'room-wrapper_data_open' : 'room-wrapper_data_close'}>
-                    <Image {...{width: '28px', src: room.lastMessageUserImg, alt: room.name, className: "room-image"}} />
-                    <p className='room__message room__message_last-message'>{room.lastMessage}</p>
-                </div>}
-            </section>
-        })}
-    </section>
+                </section>
+            })}
+        </section>
     </>
 }

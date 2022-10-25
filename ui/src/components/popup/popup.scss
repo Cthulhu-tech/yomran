@@ -13,6 +13,12 @@
     justify-content: flex-end;
 }
 
+.popup-message {
+    text-align: center;
+    border-radius: 8px;
+    padding: 3px !important;
+}
+
 .popup-container {
     width: 100%;
     z-index: 100;

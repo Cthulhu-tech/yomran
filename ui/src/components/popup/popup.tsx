@@ -26,7 +26,7 @@ export const Popup = () => {
 
     return <div className="popup-container">
         <section className="popup">
-            <p className="room__message_name">{popupState.message}</p>
+            <p className="room__message_name popup-message">{popupState.message}</p>
             <div className="button-container button-container_column">
                 <button className="button-create" onClick={callbackHandler}>Да</button>
                 <button className="button-create" onClick={close}>Отмена</button>
