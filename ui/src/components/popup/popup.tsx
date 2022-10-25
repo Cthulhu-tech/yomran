@@ -19,17 +19,19 @@ export const Popup = () => {
     }
 
     const close = () => dispatch(changeVisiblePopup({
-        open: popupState.open, 
-        callback: () => {}, 
-        message: ''
+        open: popupState.open,
+        callback: () => { },
+        message: '',
+        leftButton: '',
+        rightButton: ''
     }))
 
     return <div className="popup-container">
         <section className="popup">
             <p className="room__message_name popup-message">{popupState.message}</p>
             <div className="button-container button-container_column">
-                <button className="button-create" onClick={callbackHandler}>Да</button>
-                <button className="button-create" onClick={close}>Отмена</button>
+                <button className="button-create" onClick={callbackHandler}>{popupState.leftButton}</button>
+                <button className="button-create" onClick={close}>{popupState.rightButton}</button>
             </div>
         </section>
     </div>

@@ -13,6 +13,8 @@ export type PopupType = {
     open: boolean
     callback: () => void
     message: string
+    leftButton: string
+    rightButton: string
 }
 
 export type booleanType = {

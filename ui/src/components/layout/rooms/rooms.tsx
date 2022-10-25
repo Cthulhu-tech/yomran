@@ -18,7 +18,9 @@ export const Rooms = () => {
         dispatch(changeVisiblePopup({
             open: openPopup,
             callback: () => dispatch(deleteRooms(room)),
-            message: `Удалить все данные из комнаты ${room.name} - ${room.id}?`
+            message: `Удалить все данные из комнаты ${room.name}?`,
+            leftButton: 'Удалить',
+            rightButton: 'Отмена'
         }))
     }
 
