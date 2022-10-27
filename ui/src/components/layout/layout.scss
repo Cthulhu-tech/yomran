@@ -71,25 +71,8 @@ footer {
     grid-template-rows: 60px 1fr 1fr 60px;
 }
 
-.aside_open {
-    animation: menu-animation_open $animationFast ease-in-out forwards;
-}
-
-.aside_close {
-    animation: menu-animation_close $animationFast ease-in-out forwards;
-}
-
-@keyframes menu-animation_open {
-    from { width: 108px;}
-    to { width: 278px;}
-}
-
-@keyframes menu-animation_close {
-    from { width: 278px;}
-    to { width: 108px;}
-}
-
 .aside {
+    width: 278px;
     overflow: hidden;
     grid-area: 1 / 1 / 5 / 2;
     background-color: $white;

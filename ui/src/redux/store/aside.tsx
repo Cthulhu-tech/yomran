@@ -1,7 +1,7 @@
 import { Action } from "../interface"
 
 const defaultState = {
-    open: false
+    open: true
 }
 
 const updateVisible = "update_state_visible"
@@ -9,7 +9,7 @@ const updateVisible = "update_state_visible"
 export const visibleAside = (state = defaultState, action:Action<string, boolean>) => {
     switch (action.type){
         case updateVisible: 
-            return {open: !state.open}
+            return {open: state.open}
         default:
             return {open: state.open}
     }

@@ -19,11 +19,11 @@ export const Popup = () => {
     }
 
     const close = () => dispatch(changeVisiblePopup({
-        open: popupState.open,
-        callback: () => { },
+        open: popupState.open, 
+        callback: () => {}, 
         message: '',
-        leftButton: '',
-        rightButton: ''
+        leftButton: 'Да',
+        rightButton: 'Нет'
     }))
 
     return <div className="popup-container">
