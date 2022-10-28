@@ -10,13 +10,14 @@ import './layout.scss'
 
 export const Layout = () => {
 
+    const openAside = useSelector((store: StoreData) => store.visibleAside.open)
     const openPopup = useSelector((store: StoreData) => store.visiblePopup.open)
 
     return <div className='grid'>
         <Header />
-        {openPopup && <Popup/>}
-        <Aside />
-        <Main/>
+        {openPopup && <Popup />}
+        {openAside && <Aside />}
+        <Main />
         <Footer />
     </div>
 }
