@@ -9,9 +9,7 @@ export const Popup = () => {
     const dispatch = useDispatch()
     const popupState = useSelector((store: StoreData) => store.visiblePopup)
 
-    useEffect(() => {
-
-    }, [popupState])
+    useEffect(() => {}, [popupState])
 
     const callbackHandler = () => {
         popupState.callback()
