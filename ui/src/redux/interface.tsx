@@ -7,6 +7,7 @@ export type StoreData = {
     visibleAside: booleanType
     roomsStore: RoomsType[]
     visiblePopup: PopupType
+    visibleCreate: CreateType
 }
 
 export type PopupType = {
@@ -15,6 +16,11 @@ export type PopupType = {
     message: string
     leftButton: string
     rightButton: string
+}
+
+export type CreateType = {
+    open: boolean
+    callback: () => void
 }
 
 export type booleanType = {
