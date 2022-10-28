@@ -1,18 +1,23 @@
-import { StoreData } from '../../../redux/interface';
-import { useSelector } from 'react-redux';
+import { changeVisibleCreate } from '../../../redux/store/create'
+import { useDispatch } from 'react-redux'
 import './button.scss'
 
 export const Button = () => {
 
-    const open = useSelector((store: StoreData) => store.visibleAside.open)
-
+    const dispatch = useDispatch()
     const connectionRoom = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.stopPropagation()
         console.log('connection')
     }
 
-    return  <div className={open ? 'button-container button-container_column' : 'button-container button-container_row'}>
-        <button className='button-create'>
+    const createRoom = () => {
+        dispatch(changeVisibleCreate({
+            open: true,
+            callback: () => {}
+        }))
+    }
+
+    return  <div className='button-container button-container_column'>
+        <button className='button-create' onClick={createRoom}>
             создать комнату
         </button>
         <button className='button-create' onClick={connectionRoom}>
