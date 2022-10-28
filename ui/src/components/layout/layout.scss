@@ -52,16 +52,27 @@
 header {
     background-color: $blue;
     grid-area: 1 / 2 / 1 / 6;
+    @media screen and (max-width: 760px) {
+        z-index: 0;
+        grid-area: 1 / 1 / 2 / 4;
+    }
 }
 
 main {
     background-color: $shadow;
     grid-area: 2 / 2 / 4 / 3;
+    @media screen and (max-width: 760px) {
+        z-index: -1;
+        grid-area: 2 / 1 / 4 / 4;
+    }
 }
 
 footer {
     background-color: $shadow;
     grid-area: 5 / 2 / 4 / 3;
+    @media screen and (max-width: 760px) {
+        display: none;
+    }
 }
 
 .grid {
@@ -69,6 +80,10 @@ footer {
     height: 100vh;
     grid-template-columns: auto 1fr;
     grid-template-rows: 60px 1fr 1fr 60px;
+    @media screen and (max-width: 760px) {
+        grid-template-columns: 0px auto 0px;
+        grid-template-rows: 60px 1fr 1fr auto;
+    }
 }
 
 .aside {
@@ -76,6 +91,15 @@ footer {
     overflow: hidden;
     grid-area: 1 / 1 / 5 / 2;
     background-color: $white;
+    @media screen and (max-width: 760px) {
+        z-index: 1;
+        margin: 0 auto;
+        grid-area: 1 / 2 / 5 / 3;
+        width: clamp(278px, 80%, 560px);
+    }
+    @media screen and (max-width: 420px) {
+        width: 100%;
+    }
 }
 
 .header-wrapper {
