@@ -1,11 +1,10 @@
 import { changeVisiblePopup } from '../../../redux/store/popup'
 import { changeVisibleAside } from '../../../redux/store/aside'
 import { RoomsType, StoreData } from '../../../redux/interface'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { dataFormater } from '../../../utils/dataFormater'
 import { deleteRooms } from '../../../redux/store/rooms'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { Button } from '../button/button'
 import { Image } from '../../image/image'
 import './rooms.scss'
 
@@ -13,6 +12,7 @@ export const Rooms = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const location = useLocation()
     const rooms = useSelector((store: StoreData) => store.roomsStore)
     const openPopup = useSelector((store: StoreData) => store.visiblePopup.open)
 
@@ -20,7 +20,10 @@ export const Rooms = () => {
         event.stopPropagation()
         dispatch(changeVisiblePopup({
             open: openPopup, 
-            callback: () => dispatch(deleteRooms(room)), 
+            callback: () => {
+                dispatch(deleteRooms(room))
+                location.pathname === '/room/' + room.name && navigate('/')
+            }, 
             message: `Удалить все данные из комнаты ${room.id}?`,
             leftButton: 'Удалить',
             rightButton: 'Отмена'
@@ -32,9 +35,7 @@ export const Rooms = () => {
         dispatch(changeVisibleAside(false))
     }
 
-    return <>
-    <Button/>
-    <section className="rooms-container">
+    return <section className="rooms-container">
         {rooms.map((room) => {
         return  <section className="room-wrapper room_open" key={room.id} onClick={() => openRoom(room.name)}>
                     <div className='room-wrapper_data_open'>
@@ -52,5 +53,4 @@ export const Rooms = () => {
             </section>
         })}
     </section>
-    </>
 }
