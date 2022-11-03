@@ -93,17 +93,19 @@
 }
 
 .image {
-    padding: 6px;
-    background-color: $gray;
     transition: $animationFast;
 }
 
 .image-wrapper{
+    margin: 0 4px;
     display: flex;
     overflow: hidden;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+}
+
+.image-background {
     background-color: $shadow;
 }
 
@@ -112,6 +114,8 @@
     height: 20px;
     display: flex;
     cursor: pointer;
+    min-width: 20px;
+    min-height: 20px;
     border-radius: 100%;
     align-items: center;
     flex-direction: column;

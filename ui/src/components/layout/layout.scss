@@ -95,9 +95,9 @@ footer {
         z-index: 1;
         margin: 0 auto;
         grid-area: 1 / 2 / 5 / 3;
-        width: clamp(278px, 80%, 560px);
+        width: "max(100%, 278px)";
     }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 278px) {
         width: 100%;
     }
 }
