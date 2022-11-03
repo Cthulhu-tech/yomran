@@ -11,6 +11,7 @@ export const App = () => {
       <Route element={<Layout />}>
         <Route path='/' element={<Home/>}/>
         <Route path='/room/:roomName' element={<Room/>}/>
+        <Route path='*' element={<></>}/>
       </Route>
     </Routes>
   </BrowserRouter>
