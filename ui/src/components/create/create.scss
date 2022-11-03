@@ -1,3 +1,9 @@
-.create-container {
+.form-container {
+    display: flex;
+    margin: 20px auto;
+    min-height: 300px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
     width: clamp(278px, 100%, 560px);
 }
