@@ -3,7 +3,6 @@
 
 .popup {
     padding: 6px;
-    width: 270px;
     display: flex;
     height: 190px;
     border-radius: 20px;
@@ -11,6 +10,7 @@
     flex-direction: column;
     background-color: $white;
     justify-content: flex-end;
+    width: clamp(100px, 100%, 260px);
 }
 
 .popup-message {
