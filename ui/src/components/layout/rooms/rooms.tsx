@@ -7,6 +7,7 @@ import { deleteRooms } from '../../../redux/store/rooms'
 import { useDispatch, useSelector } from 'react-redux'
 import { Image } from '../../image/image'
 import './rooms.scss'
+import { changeVisibleCreate } from '../../../redux/store/create';
 
 export const Rooms = () => {
 
@@ -33,6 +34,7 @@ export const Rooms = () => {
     const openRoom = (href: string) => {
         navigate('/room/' + href)
         dispatch(changeVisibleAside(false))
+        dispatch(changeVisibleCreate({open: false, callback: () => {}}))
     }
 
     return <section className="rooms-container">

@@ -97,7 +97,7 @@
 }
 
 .image-wrapper{
-    margin: 0 4px;
+    margin: 0 2px;
     display: flex;
     overflow: hidden;
     align-items: center;
@@ -107,6 +107,14 @@
 
 .image-background {
     background-color: $shadow;
+}
+
+.image-wrapper_border {
+    border-style: solid;
+    background-color: $white;
+    border-radius: 0 4px 4px 0;
+    border-color: $blackOpacity;
+    border-width: 1px 1px 1px 0;
 }
 
 .close-button {

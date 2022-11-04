@@ -59,8 +59,11 @@ header {
 }
 
 main {
-    background-color: $shadow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     grid-area: 2 / 2 / 4 / 3;
+    background-color: $shadow;
     @media screen and (max-width: 760px) {
         z-index: -1;
         grid-area: 2 / 1 / 4 / 4;
