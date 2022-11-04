@@ -9,15 +9,15 @@ import { ImageType } from '../image/type'
 export const InputPassword = () => {
 
     const [show, setShow] = useState(false)
-    const [imgData, setImageData] = useState<ImageType>({width: '24px', alt: 'show', src: onvisible})
+    const [imgData, setImageData] = useState<ImageType>({width: '22px', alt: 'show', src: onvisible})
 
-    useEffect(() => {setImageData({width: '24px', alt: 'show', src: show ? visible : onvisible})}, [show])
+    useEffect(() => {setImageData({width: '22px', alt: 'show', src: show ? visible : onvisible})}, [show])
 
     const showHandler = () => setShow(!show)
 
     return  <div className='input-container'>
-                <input type={show ? "password" : "text"} className="input input-text"/>
-                <div onClick={showHandler}>
+                <input type={show ? "text" : "password"} className="input-border_rigth input"/>
+                <div onClick={showHandler} className="image-wrapper_border">
                     <Image {...imgData}/>
                 </div>
         </div>

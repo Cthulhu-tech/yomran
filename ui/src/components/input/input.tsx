@@ -1,4 +1,4 @@
 export const Input = () => {
 
-    return <input type="text" className="input input-text"/>
+    return <input type="text" className="input input-border"/>
 }
