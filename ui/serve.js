@@ -1,9 +1,9 @@
-const args = require('yargs').argv;
-const spawn = require('child_process').spawn;
+const spawn = require('child_process').spawn
+const args = require('yargs').argv
 
 if (!args.port || !args.host) {
-	console.error("port and host args required!");
-	return;
+	console.error("port and host args required!")
+	return
 }
 
 // args passed by guark parent process

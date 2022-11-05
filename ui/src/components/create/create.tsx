@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux'
 import { Input } from '../input/input'
 import './create.scss'
 
+import g from 'guark'
+
 export const Create = () => {
 
     const wide = useWindow(760)
@@ -18,6 +20,10 @@ export const Create = () => {
         }))
     }
 
+    const createRoom = () => {
+        const hello_data = g.call('createRoom')
+    }
+
     return  <form onSubmit={handlerSubmit} className={wide ? "form-container shadow_right" : "form-container"}>
             <div className='close-wrapper'>
                 <div className='close-button animation-background_medium' onClick={closeRoom}>
@@ -28,6 +34,6 @@ export const Create = () => {
             <Input />
             <InputPassword/>
         </div>
-        <input className='button-create' type="submit" value="создать"/>
+        <button className='button-create' type="submit" onClick={createRoom}>Создать</button>
     </form>
 }

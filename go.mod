@@ -16,6 +16,8 @@ require (
 	github.com/gen2brain/beeep v0.0.0-20220518085355-d7852edf42fc // indirect
 	github.com/go-toast/toast v0.0.0-20190211030409-01e6764cf0a4 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
+	github.com/huin/goupnp v1.0.3 // indirect
+	github.com/jcuga/go-upnp v0.0.0-20160830125909-492b17f02cbb // indirect
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
@@ -24,6 +26,7 @@ require (
 	github.com/webview/webview v0.0.0-20220729131735-25e7f41b8bbf // indirect
 	github.com/zserge/lorca v0.1.10 // indirect
 	golang.org/x/net v0.0.0-20220728211354-c7608f3a8462 // indirect
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20220731174439-a90be440212d // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

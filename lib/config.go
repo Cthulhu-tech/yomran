@@ -1,17 +1,17 @@
 package lib
 
 import (
+	"github.com/Cthulhu-tech/yomran/lib/funcs"
+	"github.com/Cthulhu-tech/yomran/lib/hooks"
 	"github.com/guark/guark/app"
 	"github.com/guark/plugins/clipboard"
 	"github.com/guark/plugins/dialog"
 	"github.com/guark/plugins/notify"
-	"github.com/Cthulhu-tech/yomran/lib/funcs"
-	"github.com/Cthulhu-tech/yomran/lib/hooks"
 )
 
 // Exposed functions to guark Javascript api.
 var Funcs = app.Funcs{
-	"hello_world": funcs.HelloWorld,
+	"createRoom": funcs.CreateRoom,
 }
 
 // App hooks.
