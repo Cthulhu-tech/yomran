@@ -3,6 +3,9 @@ package funcs
 import (
 	"flag"
 	"fmt"
+	"html"
+	"log"
+	"net/http"
 	"os"
 	"strconv"
 
@@ -17,10 +20,18 @@ func CreateRoom(c app.Context) (interface{}, error) {
 	portStr := port.(string)
 	portNumber, _ := strconv.ParseUint(portStr, 10, 64)
 
+	go func() {
+		http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+			fmt.Fprintf(w, "WebVideoChat, %q", html.EscapeString(r.URL.Path))
+		})
+
+		log.Fatal(http.ListenAndServe(":"+strconv.Itoa(int(portNumber+1)), nil))
+	}()
+
 	displayExternalIpPtr := flag.Bool("ip", false, "Display external IP address and exit.")
 	useUdpPtr := flag.Bool("udp", false, "Use UDP (instead of TCP) when opening/closing port forward.")
 	doClosePtr := flag.Bool("close", false, "Close (as opposed to open) the given port.")
-	portPtr := flag.Int("port", int(portNumber), "Port to open/close")
+	portPtr := flag.Int("port", int(portNumber+1), "Port to open/close")
 	flag.Parse()
 	if *displayExternalIpPtr {
 		// connect to router
