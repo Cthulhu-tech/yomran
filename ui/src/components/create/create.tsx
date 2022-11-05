@@ -21,7 +21,8 @@ export const Create = () => {
     }
 
     const createRoom = () => {
-        const hello_data = g.call('createRoom')
+        const hello_data = g.call('createRoom', {host: document.location.port})
+
     }
 
     return  <form onSubmit={handlerSubmit} className={wide ? "form-container shadow_right" : "form-container"}>

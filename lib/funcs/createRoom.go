@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strconv"
 
 	"github.com/guark/guark/app"
 	"github.com/jcuga/go-upnp"
@@ -11,10 +12,15 @@ import (
 
 func CreateRoom(c app.Context) (interface{}, error) {
 
+	port := c.Params.Get("host")
+
+	portStr := port.(string)
+	portNumber, _ := strconv.ParseUint(portStr, 10, 64)
+
 	displayExternalIpPtr := flag.Bool("ip", false, "Display external IP address and exit.")
 	useUdpPtr := flag.Bool("udp", false, "Use UDP (instead of TCP) when opening/closing port forward.")
 	doClosePtr := flag.Bool("close", false, "Close (as opposed to open) the given port.")
-	portPtr := flag.Int("port", 8973, "Port to open/close")
+	portPtr := flag.Int("port", int(portNumber), "Port to open/close")
 	flag.Parse()
 	if *displayExternalIpPtr {
 		// connect to router

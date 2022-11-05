@@ -5,7 +5,6 @@ if (!args.port || !args.host) {
 	console.error("port and host args required!")
 	return
 }
-
 // args passed by guark parent process
 process.env.PORT = args.port
 process.env.HOST = args.host
